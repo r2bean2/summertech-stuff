@@ -44,10 +44,11 @@ while True:
     py_file = py_file[:cut_point] + char_add + py_file[cut_point:]
     try:
         ast.parse(py_file)
+        if check_vaild(py_file):
+            break
     except SyntaxError:
         continue
-    if check_vaild(py_file):
-        break
+
 with open("evolve" + str(index) + ".py", "w") as file:
     file.write(py_file)
     
