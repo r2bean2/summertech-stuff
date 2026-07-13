@@ -1,5 +1,4 @@
 from random import randint
-list_to_sort = [randint(0,1000000)for i in range(2,100000000)]
 def sort(unsorted_list): 
     if len(unsorted_list) == 2:
         num1 = unsorted_list.pop()
@@ -30,9 +29,12 @@ def sort(unsorted_list):
             else:
                 print("somthings off")
         return sort(smaller_list) + equall_list + (sort(larger_list))
-print(list_to_sort)
-sorted_list = sort(list_to_sort)
-if sorted(sorted_list) == sorted_list:
-    print(sorted_list)
-else:
-    print("sort did not work")
+
+if __name__ == "__main__":
+    list_to_sort = [randint(0,1000000)for i in range(2,100000000)]
+    print(list_to_sort)
+    sorted_list = sort(list_to_sort)
+    if sorted(sorted_list) == sorted_list:
+        print(sorted_list)
+    else:
+        print("sort did not work")
